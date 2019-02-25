@@ -22,21 +22,38 @@ namespace flag_game
         public EasyGame()
         {
             InitializeComponent();
-            String[] flags = new String[] { "../../Images/UK.jpg", "../../Images/france.jpg", "../../Images/japan.jpg", };
+            Flag uk = new Flag( );
+            uk.Name = "UK";
+            uk.Path = "../../Images/UK.jpg";
 
+            Flag france = new Flag();
+            france.Name = "France";
+            france.Path = "../../Images/france.jpg";
 
-            
-            String[] countries = new String[] { "UK", "France", "Japan", "Sweden" };
+            Flag japan = new Flag();
+            japan.Name = "Japan";
+            japan.Path = "../../Images/japan.jpg";
+
+            Flag china = new Flag();
+            china.Name = "China";
+            china.Path = "../../Images/china.jpg";
+
+            String[] flags = new String[] {uk.Path, france.Path, japan.Path, china.Path };
+            String[] countries = new String[] { uk.Name, france.Name, japan.Name, china.Name };
+           // Flag[] allFlags = new Flag[]
+
             Randomizer.Randomize(flags);
             Randomizer.Randomize(countries);
             Mast.Source = new BitmapImage(new Uri(flags[0], UriKind.Relative));
+
+            //anwser = flags[0].Name;
 
             ans1.Content = countries[0];
             ans2.Content = countries[1];
             ans3.Content = countries[2];
             ans4.Content = countries[3];
 
-            
+
         }
         public class Randomizer
         {
@@ -54,6 +71,7 @@ namespace flag_game
                     items[j] = temp;
                 }
             }
-    }
+        }
+
     }
 }

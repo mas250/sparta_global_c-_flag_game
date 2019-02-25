@@ -70,6 +70,7 @@
     <Compile Include="EasyGame.xaml.cs">
       <DependentUpon>EasyGame.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Flag.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -109,6 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\france.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\china.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
