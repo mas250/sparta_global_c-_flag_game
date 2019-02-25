@@ -22,7 +22,7 @@ namespace flag_game
         public EasyGame()
         {
             InitializeComponent();
-            String[] flags = new String[] { "../../Images/UK.jpg", "../../Images/france.jpg", "../../Images/UK.jpg", };
+            String[] flags = new String[] { "../../Images/UK.jpg", "../../Images/france.jpg", "../../Images/japan.jpg", };
 
 
             
