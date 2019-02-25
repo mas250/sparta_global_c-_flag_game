@@ -23,25 +23,18 @@ namespace flag_game
         public MainWindow()
         {
             InitializeComponent();
-            intro.Text = "*Welcome* \n *Rules*";
-            //Mast.Source = 
-               
+            intro.Text = "*Welcome* \n *Rules*";    
         }
-
-        
-
 
         private void launch_easy(object sender, RoutedEventArgs e)
         {
-            //Window1 myWindow = new Window1();
             Flag[] allFlags = createFlags();
-            
-            
+            //string b = allFlags[0].Name;
             EasyGame eg = new EasyGame(allFlags);
-            //Window eg = new Window();
             eg.Show();
             this.Close();
         }
+
         private Flag[] createFlags() {
             Flag uk = new Flag();
             uk.Name = "UK";
@@ -59,10 +52,10 @@ namespace flag_game
             china.Name = "China";
             china.Path = "../../Images/china.jpg";
 
-            // Flag china = new Flag("China", "../../Images/china.jpg");
-             Flag[] allFlags = new Flag[] { uk, france, japan, china };
+            
+            Flag[] allFlags = new Flag[] { uk, france, japan, china };
             rand.Randomizer.Randomize(allFlags);
-
+            
             return allFlags;
         }
 

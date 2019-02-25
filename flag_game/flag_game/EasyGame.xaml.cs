@@ -22,38 +22,30 @@ namespace flag_game
     public partial class EasyGame : Window
     {
     Flag[] allFlags;
-    public EasyGame(Flag[] allflags)
+        
+        public EasyGame(Flag[] allflags)
         {
             InitializeComponent();
 
-            this.allFlags = allFlags;
+            this.allFlags = allFlags;   //flag list AllFlags created at page load
 
 
-           string a = allflags[0].Path;
-           string b = allflags[0].Name;
-            // Randomizer.Randomize(allFlags);//
-
-
-            Mast.Source = new BitmapImage(new Uri(a, UriKind.Relative));//
+            Mast.Source = new BitmapImage(new Uri(allflags[0].Path, UriKind.Relative));//
 
             string[] anwsers = new string[] { allflags[0].Name, allflags[1].Name, allflags[2].Name, allflags[3].Name };
             rand.Randomizer.Randomize(anwsers);
-            //string correctAnswer = allFlags[0].Name;
+
             ans1.Content = anwsers[0];
             ans2.Content = anwsers[1];
             ans3.Content = anwsers[2];
             ans4.Content = anwsers[3];
 
 
+
         }
-        
-
         private void Ans1_Click(object sender, RoutedEventArgs e)
-        {
-            //if (ans1.Content.ToString() == correctAnswer)
-            {
-
-            }
+        {   
+          
         }
     }
 }
