@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="rand.cs" />
     <Page Include="EasyGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

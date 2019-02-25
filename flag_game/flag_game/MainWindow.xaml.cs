@@ -30,13 +30,40 @@ namespace flag_game
 
         
 
+
         private void launch_easy(object sender, RoutedEventArgs e)
         {
             //Window1 myWindow = new Window1();
-            EasyGame eg = new EasyGame();
+            Flag[] allFlags = createFlags();
+            
+            
+            EasyGame eg = new EasyGame(allFlags);
             //Window eg = new Window();
             eg.Show();
             this.Close();
+        }
+        private Flag[] createFlags() {
+            Flag uk = new Flag();
+            uk.Name = "UK";
+            uk.Path = "../../Images/UK.jpg";
+
+            Flag france = new Flag();
+            france.Name = "France";
+            france.Path = "../../Images/france.jpg";
+
+            Flag japan = new Flag();
+            japan.Name = "Japan";
+            japan.Path = "../../Images/japan.jpg";
+
+            Flag china = new Flag();
+            china.Name = "China";
+            china.Path = "../../Images/china.jpg";
+
+            // Flag china = new Flag("China", "../../Images/china.jpg");
+             Flag[] allFlags = new Flag[] { uk, france, japan, china };
+            rand.Randomizer.Randomize(allFlags);
+
+            return allFlags;
         }
 
     }
