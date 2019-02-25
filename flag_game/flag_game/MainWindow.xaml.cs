@@ -24,6 +24,8 @@ namespace flag_game
         {
             InitializeComponent();
             intro.Text = "*Welcome* \n *Rules*";
+            //Mast.Source = 
+               
         }
 
         

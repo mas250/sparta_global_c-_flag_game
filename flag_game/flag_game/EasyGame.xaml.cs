@@ -22,6 +22,13 @@ namespace flag_game
         public EasyGame()
         {
             InitializeComponent();
+            Mast.Source = new BitmapImage(new Uri("../../Images/UK.jpg", UriKind.Relative));
+            String[] countries = new String[] { "UK", "France", "Japan", "Sweden" };
+
+            ans1.Content = countries[3];
+            ans2.Content = countries[1];
+            ans3.Content = countries[2];
+            ans4.Content = countries[0];
         }
     }
 }
