@@ -55,7 +55,6 @@ namespace flag_game
                 MessageBox.Show("haha, no!");
             }
         }
-
         private void Ans2_Click(object sender, RoutedEventArgs e)
         {
             if (ans2.Content.ToString() == allFlags[0].Name.ToString())
@@ -78,7 +77,6 @@ namespace flag_game
                 MessageBox.Show("haha, no!");
             }
         }
-
         private void Ans4_Click(object sender, RoutedEventArgs e)
         {
             if (ans4.Content.ToString() == allFlags[0].Name.ToString())

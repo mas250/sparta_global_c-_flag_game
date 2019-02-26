@@ -51,8 +51,26 @@ namespace flag_game
             china.Name = "China";
             china.Path = "../../Images/china.jpg";
 
+            Flag afghanistan = new Flag();
+            afghanistan.Name = "Afghanistan";
+            afghanistan.Path = "../../Images/afghanistan.jpg";
+
+            Flag antigua = new Flag();
+            antigua.Name = "Antigua";
+            antigua.Path = "../../Images/antigua.jpg";
+
+            Flag argentina = new Flag();
+            argentina.Name = "Argentina";
+            argentina.Path = "../../Images/argentina.jpg";
+
+            Flag armenia = new Flag();
+            armenia.Name = "Armenia";
+            armenia.Path = "../../Images/armenia.jpg";
+
+
+
             //add more flags
-            Flag[] allFlags = new Flag[] { uk, france, japan, china };
+            Flag[] allFlags = new Flag[] { uk, france, japan, china, afghanistan, antigua, argentina, armenia };
             rand.Randomizer.Randomize(allFlags);
             
             //place shuffled list in a list of length 4
