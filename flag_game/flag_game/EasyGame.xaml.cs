@@ -22,7 +22,7 @@ namespace flag_game
     public partial class EasyGame : Window
     {
     Flag[] allFlags;
-        int lives = 3;
+        int lives = 2;
 
         public EasyGame(Flag[] allflags)
         {
@@ -62,41 +62,74 @@ namespace flag_game
         }
         private void Ans2_Click(object sender, RoutedEventArgs e)
         {
-            if (ans2.Content.ToString() == allFlags[0].Name.ToString())
+            if (lives != 0)
             {
-                MessageBox.Show("yes!");
-                makeQuestion(allFlags);
+                if (ans2.Content.ToString() == allFlags[0].Name.ToString())
+                {
+                    MessageBox.Show("yes!");
+                    makeQuestion(allFlags);
+                }
+                else
+                {
+                    MessageBox.Show("haha, no!");
+                    lives -= 1;
+                    makeQuestion(allFlags);
+                }
             }
             else
             {
-                MessageBox.Show("haha, no!");
-                makeQuestion(allFlags);
+                MessageBox.Show("you lose :-(");
+                MainWindow mw = new MainWindow();
+                mw.Show();
+                this.Close();
             }
         }
         private void Ans3_Click(object sender, RoutedEventArgs e)
         {
-            if (ans3.Content.ToString() == allFlags[0].Name.ToString())
+            if (lives != 0)
             {
-                MessageBox.Show("yes!");
-                makeQuestion(allFlags);
+                if (ans3.Content.ToString() == allFlags[0].Name.ToString())
+                {
+                    MessageBox.Show("yes!");
+                    makeQuestion(allFlags);
+                }
+                else
+                {
+                    MessageBox.Show("haha, no!");
+                    lives -= 1;
+                    makeQuestion(allFlags);
+                }
             }
             else
             {
-                MessageBox.Show("haha, no!");
-                makeQuestion(allFlags);
+                MessageBox.Show("you lose :-(");
+                MainWindow mw = new MainWindow();
+                mw.Show();
+                this.Close();
             }
         }
         private void Ans4_Click(object sender, RoutedEventArgs e)
         {
-            if (ans4.Content.ToString() == allFlags[0].Name.ToString())
+            if (lives != 0)
             {
-                MessageBox.Show("yes!");
-                makeQuestion(allFlags);
+                if (ans4.Content.ToString() == allFlags[0].Name.ToString())
+                {
+                    MessageBox.Show("yes!");
+                    makeQuestion(allFlags);
+                }
+                else
+                {
+                    MessageBox.Show("haha, no!");
+                    lives -= 1;
+                    makeQuestion(allFlags);
+                }
             }
             else
             {
-                MessageBox.Show("haha, no!");
-                makeQuestion(allFlags);
+                MessageBox.Show("you lose :-(");
+                MainWindow mw = new MainWindow();
+                mw.Show();
+                this.Close();
             }
         }
 
