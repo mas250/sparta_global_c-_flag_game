@@ -69,7 +69,10 @@ namespace flag_game
 
 
 
-            //add more flags
+            //add more flags#
+
+
+
             Flag[] allFlags = new Flag[] { uk, france, japan, china, afghanistan, antigua, argentina, armenia };
             rand.Randomizer.Randomize(allFlags);
             

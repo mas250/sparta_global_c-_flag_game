@@ -29,7 +29,68 @@ namespace flag_game
 
             this.allFlags = allFlags;   //flag list AllFlags created at page load
 
+            
+            makeQuestion(allflags);
+            
 
+        }
+        private void Ans1_Click(object sender, RoutedEventArgs e)
+        {
+            // MessageBox.Show(ans1.Content.ToString());
+            if (ans1.Content.ToString() == allFlags[0].Name.ToString())
+            {
+                MessageBox.Show("yes!");
+                makeQuestion(allFlags);
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+                makeQuestion(allFlags);
+            }
+        }
+        private void Ans2_Click(object sender, RoutedEventArgs e)
+        {
+            if (ans2.Content.ToString() == allFlags[0].Name.ToString())
+            {
+                MessageBox.Show("yes!");
+                makeQuestion(allFlags);
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+                makeQuestion(allFlags);
+            }
+        }
+        private void Ans3_Click(object sender, RoutedEventArgs e)
+        {
+            if (ans3.Content.ToString() == allFlags[0].Name.ToString())
+            {
+                MessageBox.Show("yes!");
+                makeQuestion(allFlags);
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+                makeQuestion(allFlags);
+            }
+        }
+        private void Ans4_Click(object sender, RoutedEventArgs e)
+        {
+            if (ans4.Content.ToString() == allFlags[0].Name.ToString())
+            {
+                MessageBox.Show("yes!");
+                makeQuestion(allFlags);
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+                makeQuestion(allFlags);
+            }
+        }
+
+        private void makeQuestion(Flag[] allflags)
+        {
+            rand.Randomizer.Randomize(allflags);
             Mast.Source = new BitmapImage(new Uri(allflags[0].Path, UriKind.Relative));//
 
             string[] anwsers = new string[] { allflags[0].Name, allflags[1].Name, allflags[2].Name, allflags[3].Name };
@@ -42,53 +103,8 @@ namespace flag_game
 
             allFlags = allflags; //convert to global variable
 
+            
         }
-        private void Ans1_Click(object sender, RoutedEventArgs e)
-        {
-            // MessageBox.Show(ans1.Content.ToString());
-            if (ans1.Content.ToString() == allFlags[0].Name.ToString())
-            {
-                MessageBox.Show("yes!");
-            }
-            else
-            {
-                MessageBox.Show("haha, no!");
-            }
-        }
-        private void Ans2_Click(object sender, RoutedEventArgs e)
-        {
-            if (ans2.Content.ToString() == allFlags[0].Name.ToString())
-            {
-                MessageBox.Show("yes!");
-            }
-            else
-            {
-                MessageBox.Show("haha, no!");
-            }
-        }
-        private void Ans3_Click(object sender, RoutedEventArgs e)
-        {
-            if (ans3.Content.ToString() == allFlags[0].Name.ToString())
-            {
-                MessageBox.Show("yes!");
-            }
-            else
-            {
-                MessageBox.Show("haha, no!");
-            }
-        }
-        private void Ans4_Click(object sender, RoutedEventArgs e)
-        {
-            if (ans4.Content.ToString() == allFlags[0].Name.ToString())
-            {
-                MessageBox.Show("yes!");
-            }
-            else
-            {
-                MessageBox.Show("haha, no!");
-            }
-        }
-
         
     }
 }
