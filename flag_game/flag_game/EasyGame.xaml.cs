@@ -22,7 +22,8 @@ namespace flag_game
     public partial class EasyGame : Window
     {
     Flag[] allFlags;
-        
+        int lives = 3;
+
         public EasyGame(Flag[] allflags)
         {
             InitializeComponent();
@@ -36,17 +37,28 @@ namespace flag_game
         }
         private void Ans1_Click(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show(ans1.Content.ToString());
-            if (ans1.Content.ToString() == allFlags[0].Name.ToString())
+            if (lives != 0)
             {
-                MessageBox.Show("yes!");
-                makeQuestion(allFlags);
+                if (ans1.Content.ToString() == allFlags[0].Name.ToString())
+                {
+                    MessageBox.Show("yes!");
+                    makeQuestion(allFlags);
+                }
+                else
+                {
+                    MessageBox.Show("haha, no!");
+                    lives = lives - 1;
+                    makeQuestion(allFlags);
+                }
             }
             else
             {
-                MessageBox.Show("haha, no!");
-                makeQuestion(allFlags);
+                MessageBox.Show("you lose :-(");
+                MainWindow mw = new MainWindow();
+                mw.Show();
+                this.Close();
             }
+            
         }
         private void Ans2_Click(object sender, RoutedEventArgs e)
         {
