@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Timers;
 
 namespace flag_game
 {
@@ -18,10 +19,10 @@ namespace flag_game
     /// Interaction logic for EasyGame.xaml
     /// </summary>
     /// 
-   
+
     public partial class EasyGame : Window
     {
-    Flag[] allFlags;
+        Flag[] allFlags;
         int lives = 2;
 
         public EasyGame(Flag[] allflags)
@@ -30,10 +31,23 @@ namespace flag_game
 
             this.allFlags = allFlags;   //flag list AllFlags created at page load
 
-            
+
             makeQuestion(allflags);
+
+            System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 30000;
+            aTimer.Enabled = true;
             
 
+
+        }
+        private void gameOver()
+        {
+            MessageBox.Show("you lose :-(");
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
         }
         private void Ans1_Click(object sender, RoutedEventArgs e)
         {
@@ -58,7 +72,7 @@ namespace flag_game
                 mw.Show();
                 this.Close();
             }
-            
+
         }
         private void Ans2_Click(object sender, RoutedEventArgs e)
         {
@@ -126,10 +140,11 @@ namespace flag_game
             }
             else
             {
-                MessageBox.Show("you lose :-(");
-                MainWindow mw = new MainWindow();
-                mw.Show();
-                this.Close();
+                //MessageBox.Show("you lose :-(");
+                //MainWindow mw = new MainWindow();
+                //mw.Show();
+                //this.Close();
+                gameOver();
             }
         }
 
@@ -148,8 +163,19 @@ namespace flag_game
 
             allFlags = allflags; //convert to global variable
 
-            
+
         }
-        
+        private static void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            MessageBox.Show("time up! :-(");
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            // Application.Current.Windows[0].Close();
+            //this.flag flag_game.EasyGame
+            
+
+
+        }
+       
     }
 }
