@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Timers;
+using System.Threading;
 
 namespace flag_game
 {
@@ -36,7 +37,7 @@ namespace flag_game
 
             System.Timers.Timer aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 3000;
+            aTimer.Interval = 30000;
             aTimer.Enabled = true;
             
 
@@ -45,9 +46,22 @@ namespace flag_game
         private void gameOver()
         {
             MessageBox.Show("you lose :-(");
-            //MainWindow mw = new MainWindow();
-            //mw.Show();
-            this.Close();
+            
+            Task.Factory.StartNew(() =>
+            {
+                InvokeMethodExample();
+            });
+            
+        }
+        private void InvokeMethodExample()
+        {
+            Thread.Sleep(500);
+            Dispatcher.Invoke(() =>
+            {
+                MainWindow mw = new MainWindow();
+                mw.Show();
+                this.Close();
+            });
         }
         private void Ans1_Click(object sender, RoutedEventArgs e)
         {
@@ -144,6 +158,7 @@ namespace flag_game
                 //MainWindow mw = new MainWindow();
                 //mw.Show();
                 //this.Close();
+                
                 gameOver();
             }
         }
@@ -172,6 +187,7 @@ namespace flag_game
             //mw.Show();
             // Application.Current.Windows[0].Close();
             //this.flag flag_game.EasyGame
+            
             gameOver();
             
 
