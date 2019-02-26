@@ -24,6 +24,7 @@ namespace flag_game
     public partial class EasyGame : Window
     {
         Flag[] allFlags;
+        System.Timers.Timer aTimer = new System.Timers.Timer();
         int lives = 2;
 
         public EasyGame(Flag[] allflags)
@@ -35,6 +36,7 @@ namespace flag_game
 
             makeQuestion(allflags);
 
+            makeTimer();
             System.Timers.Timer aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             aTimer.Interval = 30000;
@@ -180,6 +182,22 @@ namespace flag_game
 
 
         }
+
+        private void makeTimer()
+        {
+            setTimer();
+
+            
+        }
+        public void setTimer()
+        {
+            
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 30000;
+            aTimer.Enabled = true;
+            
+        }
+
         private  void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             //MessageBox.Show("time up! :-(");
@@ -187,10 +205,8 @@ namespace flag_game
             //mw.Show();
             // Application.Current.Windows[0].Close();
             //this.flag flag_game.EasyGame
-            
+            aTimer.Stop();
             gameOver();
-            
-
 
         }
        
