@@ -29,7 +29,6 @@ namespace flag_game
         private void launch_easy(object sender, RoutedEventArgs e)
         {
             Flag[] allFlags = createFlags();
-            //string b = allFlags[0].Name;
             EasyGame eg = new EasyGame(allFlags);
             eg.Show();
             this.Close();
@@ -52,10 +51,12 @@ namespace flag_game
             china.Name = "China";
             china.Path = "../../Images/china.jpg";
 
-            
+            //add more flags
             Flag[] allFlags = new Flag[] { uk, france, japan, china };
             rand.Randomizer.Randomize(allFlags);
             
+            //place shuffled list in a list of length 4
+
             return allFlags;
         }
 

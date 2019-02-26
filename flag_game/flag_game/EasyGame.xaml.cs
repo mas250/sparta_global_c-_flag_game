@@ -40,12 +40,57 @@ namespace flag_game
             ans3.Content = anwsers[2];
             ans4.Content = anwsers[3];
 
-
+            allFlags = allflags; //convert to global variable
 
         }
         private void Ans1_Click(object sender, RoutedEventArgs e)
-        {   
-          
+        {
+            // MessageBox.Show(ans1.Content.ToString());
+            if (ans1.Content.ToString() == allFlags[0].Name.ToString())
+            {
+                MessageBox.Show("yes!");
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+            }
         }
+
+        private void Ans2_Click(object sender, RoutedEventArgs e)
+        {
+            if (ans2.Content.ToString() == allFlags[0].Name.ToString())
+            {
+                MessageBox.Show("yes!");
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+            }
+        }
+        private void Ans3_Click(object sender, RoutedEventArgs e)
+        {
+            if (ans3.Content.ToString() == allFlags[0].Name.ToString())
+            {
+                MessageBox.Show("yes!");
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+            }
+        }
+
+        private void Ans4_Click(object sender, RoutedEventArgs e)
+        {
+            if (ans4.Content.ToString() == allFlags[0].Name.ToString())
+            {
+                MessageBox.Show("yes!");
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+            }
+        }
+
+        
     }
 }
