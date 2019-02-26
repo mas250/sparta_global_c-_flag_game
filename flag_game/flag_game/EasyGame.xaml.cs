@@ -36,7 +36,7 @@ namespace flag_game
 
             System.Timers.Timer aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 30000;
+            aTimer.Interval = 3000;
             aTimer.Enabled = true;
             
 
@@ -45,8 +45,8 @@ namespace flag_game
         private void gameOver()
         {
             MessageBox.Show("you lose :-(");
-            MainWindow mw = new MainWindow();
-            mw.Show();
+            //MainWindow mw = new MainWindow();
+            //mw.Show();
             this.Close();
         }
         private void Ans1_Click(object sender, RoutedEventArgs e)
@@ -165,13 +165,14 @@ namespace flag_game
 
 
         }
-        private static void OnTimedEvent(object source, ElapsedEventArgs e)
+        private  void OnTimedEvent(object source, ElapsedEventArgs e)
         {
-            MessageBox.Show("time up! :-(");
-            MainWindow mw = new MainWindow();
-            mw.Show();
+            //MessageBox.Show("time up! :-(");
+            //MainWindow mw = new MainWindow();
+            //mw.Show();
             // Application.Current.Windows[0].Close();
             //this.flag flag_game.EasyGame
+            gameOver();
             
 
 
