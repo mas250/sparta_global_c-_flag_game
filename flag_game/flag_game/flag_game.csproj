@@ -131,6 +131,16 @@
     <Resource Include="Images\antigua.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\belgium.jpg" />
+    <Resource Include="Images\belize.jpg" />
+    <Resource Include="Images\belarus.jpg" />
+    <Resource Include="Images\barbados.jpg" />
+    <Resource Include="Images\bangladesh.jpg" />
+    <Resource Include="Images\bahrain.jpg" />
+    <Resource Include="Images\bahamas.jpg" />
+    <Resource Include="Images\azerbaijan.jpg" />
+    <Resource Include="Images\austria.jpg" />
+    <Resource Include="Images\australia.jpg" />
     <Resource Include="Images\angola.jpg" />
     <Content Include="Sounds\start.wav" />
     <Content Include="Sounds\wrong.mp3" />

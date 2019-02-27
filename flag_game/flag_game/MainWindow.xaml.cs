@@ -79,10 +79,52 @@ namespace flag_game
             angola.Name = "Angola";
             angola.Path = "../../Images/angola.jpg";
 
+            Flag australia = new Flag();
+            australia.Name = "Australia";
+            australia.Path = "../../Images/australia.jpg";
+
+            Flag austria = new Flag();
+            austria.Name = "Austria";
+            austria.Path = "../../Images/austria.jpg";
+
+            Flag azerbaijan = new Flag();
+            azerbaijan.Name = "Azerbaijan";
+            azerbaijan.Path = "../../Images/azerbaijan.jpg";
+
+            Flag bahamas = new Flag();
+            bahamas.Name = "Bahamas";
+            bahamas.Path = "../../Images/bahamas.jpg";
+
+            Flag bahrain = new Flag();
+            bahrain.Name = "Baharin";
+            bahrain.Path = "../../Images/bahrain.jpg";
+
+            Flag bangladesh = new Flag();
+            bangladesh.Name = "Bangladesh";
+            bangladesh.Path = "../../Images/bangladesh.jpg";
+
+            Flag barbados = new Flag();
+            barbados.Name = "Barbados";
+            barbados.Path = "../../Images/barbados.jpg";
+
+            Flag belarus = new Flag();
+            belarus.Name = "Belarus";
+            belarus.Path = "../../Images/belarus.jpg";
+
+            Flag belgium = new Flag();
+            belgium.Name = "Belgium";
+            belgium.Path = "../../Images/belgium.jpg";
+
+            Flag belize = new Flag();
+            belize.Name = "Belize";
+            belize.Path = "../../Images/belize.jpg";
+
             //add more flags#
 
 
-            Flag[] allFlags = new Flag[] { uk, france, japan, china, afghanistan, antigua, argentina, armenia, angola };
+            Flag[] allFlags = new Flag[] { uk, france, japan, china, afghanistan, antigua, argentina,
+                armenia, angola, australia, austria, azerbaijan, bahamas, bahrain, bangladesh, barbados,
+                belarus, belgium, belize };
             rand.Randomizer.Randomize(allFlags);
             
             //place shuffled list in a list of length 4

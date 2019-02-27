@@ -12,11 +12,11 @@
         <Button x:Name="ans3" Content="Button3" HorizontalAlignment="Left" Margin="603,225,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="3.619,5.756" Height="27" Click="Ans3_Click" Foreground="Wheat" FontSize="1"/>
         <Button x:Name="ans4" Content="Button4" HorizontalAlignment="Left" Margin="165,365,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="3.619,5.756" Height="28" Click="Ans4_Click" Foreground="Wheat" FontSize="1"/>
         <Image Name="mast1" HorizontalAlignment="Left" Height="89" Margin="53,120,0,0" VerticalAlignment="Top" Width="261"/>
-        <Label x:Name="livesLabel" Content="Label" HorizontalAlignment="Left" Margin="53,28,0,0" VerticalAlignment="Top" Height="27" Width="42"/>
+        <Label x:Name="livesLabel" Content="Label" HorizontalAlignment="Left" Margin="53,28,0,0" VerticalAlignment="Top" Height="27" Width="56"/>
         <Image x:Name="mast2" HorizontalAlignment="Left" Height="89" Margin="486,120,0,0" VerticalAlignment="Top" Width="262"/>
         <Image x:Name="mast3" HorizontalAlignment="Left" Height="89" Margin="53,264,0,0" VerticalAlignment="Top" Width="261"/>
         <Image x:Name="mast4" HorizontalAlignment="Left" Height="89" Margin="486,262,0,0" VerticalAlignment="Top" Width="262"/>
-        <TextBlock Name="mainFlag" HorizontalAlignment="Left" Margin="330,54,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="61" Width="163"/>
+        <TextBlock Name="mainFlag" HorizontalAlignment="Left" Margin="330,54,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="61" Width="163" FontSize="28"/>
     </Grid>
 
 
