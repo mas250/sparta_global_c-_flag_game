@@ -75,12 +75,14 @@ namespace flag_game
             armenia.Name = "Armenia";
             armenia.Path = "../../Images/armenia.jpg";
 
-
+            Flag angola = new Flag();
+            angola.Name = "Angola";
+            angola.Path = "../../Images/angola.jpg";
 
             //add more flags#
 
 
-            Flag[] allFlags = new Flag[] { uk, france, japan, china, afghanistan, antigua, argentina, armenia };
+            Flag[] allFlags = new Flag[] { uk, france, japan, china, afghanistan, antigua, argentina, armenia, angola };
             rand.Randomizer.Randomize(allFlags);
             
             //place shuffled list in a list of length 4
