@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="EasyGame" Height="450" Width="800">
     <Grid>
-        <Button Name="ans1" Content="Button1" HorizontalAlignment="Left" Margin="253,202,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="3.619,5.756" Height="32" Click="Ans1_Click"/>
+        <Button Name="ans1" Content="Button1" HorizontalAlignment="Left" Margin="253,201,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="3.619,5.756" Height="32" Click="Ans1_Click"/>
         <Button Name="ans2" Content="Button2" HorizontalAlignment="Left" Margin="431,303,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="3.619,5.756" Height="32" Click="Ans2_Click" />
         <Button Name="ans3" Content="Button3" HorizontalAlignment="Left" Margin="431,202,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="3.619,5.756" Height="32" Click="Ans3_Click"/>
         <Button Name="ans4" Content="Button4" HorizontalAlignment="Left" Margin="253,303,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="3.619,5.756" Height="32" Click="Ans4_Click"/>

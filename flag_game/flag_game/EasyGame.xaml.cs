@@ -26,7 +26,7 @@ namespace flag_game
         Flag[] allFlags;
         System.Timers.Timer aTimer = new System.Timers.Timer();
         int lives = 3;
-
+        System.Media.SoundPlayer rightSound = new System.Media.SoundPlayer(@"../../Sounds/start.wav");
         public EasyGame(Flag[] allflags)
         {
             InitializeComponent();
@@ -36,48 +36,54 @@ namespace flag_game
             makeTimer();
             
         }
-        private void gameOver()
+        private void makeQuestion(Flag[] allflags)
         {
-            aTimer.Enabled = false;
-            MessageBox.Show("you lose :-(");
-            Task.Factory.StartNew(() =>     //dispatcher used to manage threads
-            {
-                InvokeMethodExample();
-            });
-            
+            livesLabel.Content = "lives: " + lives;
+            rand.Randomizer.Randomize(allflags);
+            Mast.Source = new BitmapImage(new Uri(allflags[0].Path, UriKind.Relative));//
+
+            string[] anwsers = new string[] { allflags[0].Name, allflags[1].Name, allflags[2].Name, allflags[3].Name };
+            rand.Randomizer.Randomize(anwsers);
+
+            ans1.Background = Brushes.Wheat;
+            ans2.Background = Brushes.Wheat;
+            ans3.Background = Brushes.Wheat;
+            ans4.Background = Brushes.Wheat;
+
+
+            ans1.Content = anwsers[0];
+            ans2.Content = anwsers[1];
+            ans3.Content = anwsers[2];
+            ans4.Content = anwsers[3];
+
+            allFlags = allflags; //convert to global variable
         }
-        private void InvokeMethodExample()
-        {
-            Thread.Sleep(500);
-            Dispatcher.Invoke(() =>
-            {
-                MainWindow mw = new MainWindow();
-                mw.Show();
-                this.Close();           //Timer runs on its own threads
-            });
-        }
+
         private void Ans1_Click(object sender, RoutedEventArgs e)
         {
             
-                if (ans1.Content.ToString() == allFlags[0].Name.ToString())
+            if (ans1.Content.ToString() == allFlags[0].Name.ToString())
+            {
+                ans1.Background = Brushes.Green;
+                correctAnswer();
+            }
+            else
+            {
+                ans1.Background = Brushes.Red;
+                wrongAnwser();
+                
+
+                if (lives != 0)
                 {
-                    correctAnswer();
+                    makeQuestion(allFlags);
                 }
                 else
                 {
-                    wrongAnwser();
                     
-                     if (lives != 0)
-                     {
-                         makeQuestion(allFlags);
-                     }
-                     else
-                     {
-                         gameOver();
-                     }
+                    gameOver();
                 }
+            }
         }
-
         private void Ans2_Click(object sender, RoutedEventArgs e)
         {
             if (ans2.Content.ToString() == allFlags[0].Name.ToString())
@@ -86,7 +92,7 @@ namespace flag_game
             }
             else
             {
-                wrongAnwser(); 
+                wrongAnwser();
                 if (lives != 0)
                 {
                     makeQuestion(allFlags);
@@ -105,7 +111,7 @@ namespace flag_game
             }
             else
             {
-                wrongAnwser(); 
+                wrongAnwser();
                 if (lives != 0)
                 {
                     makeQuestion(allFlags);
@@ -124,7 +130,7 @@ namespace flag_game
             }
             else
             {
-                wrongAnwser(); 
+                wrongAnwser();
                 if (lives != 0)
                 {
                     makeQuestion(allFlags);
@@ -136,37 +142,54 @@ namespace flag_game
             }
         }
 
-        private void makeQuestion(Flag[] allflags)
-        {
-            livesLabel.Content = "lives: " + lives;
-            rand.Randomizer.Randomize(allflags);
-            Mast.Source = new BitmapImage(new Uri(allflags[0].Path, UriKind.Relative));//
-
-            string[] anwsers = new string[] { allflags[0].Name, allflags[1].Name, allflags[2].Name, allflags[3].Name };
-            rand.Randomizer.Randomize(anwsers);
-
-            ans1.Content = anwsers[0];
-            ans2.Content = anwsers[1];
-            ans3.Content = anwsers[2];
-            ans4.Content = anwsers[3];
-
-            allFlags = allflags; //convert to global variable
-
-
-        }
-
         private void correctAnswer()
         {
+            rightSound.Play();
             MessageBox.Show("yes!");
             makeQuestion(allFlags);
         }
-
         private void wrongAnwser()
         {
             MessageBox.Show("haha, no!");
+            Thread.Sleep(500);
             lives = lives - 1;
         }
+        private void gameOver()
+        {
+            aTimer.Enabled = false;
+            MessageBox.Show("you lose :-(");
+            Task.Factory.StartNew(() =>     //dispatcher used to manage threads
+            {
+                InvokeMethodExample();
+            });
+            
+        }
 
+        private void InvokeMethodExample()
+        {
+            Thread.Sleep(500);
+            Dispatcher.Invoke(() =>
+            {
+                
+                MainWindow mw = new MainWindow();
+                mw.Show();
+                this.Close();           //Timer runs on its own threads
+            });
+        }
+
+
+
+
+        private void makeTimer()
+        {
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 30000;
+            aTimer.Enabled = true;
+        }
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            timeUp();
+        }
         private void timeUp()
         {
             aTimer.Enabled = false;
@@ -177,20 +200,9 @@ namespace flag_game
             });
         }
 
-        private void makeTimer()
-        {
-            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 30000;
-            aTimer.Enabled = true;
-            timerLabel.Content = aTimer.ToString();
-
-        }
+        
        
 
-        private  void OnTimedEvent(object source, ElapsedEventArgs e)
-        {
-            timeUp();
-        }
        
     }
 }

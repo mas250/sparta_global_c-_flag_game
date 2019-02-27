@@ -123,5 +123,9 @@
     <Resource Include="Images\afghanistan.jpg" />
     <Resource Include="Images\antigua.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sounds\start.wav" />
+    <Content Include="Sounds\wrong.mp3" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
