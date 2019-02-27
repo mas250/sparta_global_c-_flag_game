@@ -12,6 +12,8 @@
         <Button Name="ans3" Content="Button3" HorizontalAlignment="Left" Margin="431,202,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="3.619,5.756" Height="32" Click="Ans3_Click"/>
         <Button Name="ans4" Content="Button4" HorizontalAlignment="Left" Margin="253,303,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="3.619,5.756" Height="32" Click="Ans4_Click"/>
         <Image Name="Mast" HorizontalAlignment="Left" Height="125" Margin="277,43,0,0" VerticalAlignment="Top" Width="226"/>
+        <Label Name="livesLabel" Content="Label" HorizontalAlignment="Left" Margin="55,43,0,0" VerticalAlignment="Top"/>
+        <Label Name="timerLabel" Content="Label" HorizontalAlignment="Left" Margin="55,88,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

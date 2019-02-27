@@ -34,9 +34,11 @@ namespace flag_game
 
             makeQuestion(allflags);
             makeTimer();
+            
         }
         private void gameOver()
         {
+            aTimer.Enabled = false;
             MessageBox.Show("you lose :-(");
             Task.Factory.StartNew(() =>     //dispatcher used to manage threads
             {
@@ -59,44 +61,38 @@ namespace flag_game
             
                 if (ans1.Content.ToString() == allFlags[0].Name.ToString())
                 {
-                    MessageBox.Show("yes!");
-                    makeQuestion(allFlags);
+                    correctAnswer();
                 }
                 else
                 {
-                    MessageBox.Show("haha, no!");
-                    lives = lives - 1; ////////
+                    wrongAnwser();
+                    
                      if (lives != 0)
                      {
                          makeQuestion(allFlags);
                      }
                      else
                      {
-                    aTimer.Enabled = false;
-                    gameOver();
+                         gameOver();
                      }
                 }
-           
-
         }
+
         private void Ans2_Click(object sender, RoutedEventArgs e)
         {
             if (ans2.Content.ToString() == allFlags[0].Name.ToString())
             {
-                MessageBox.Show("yes!");
-                makeQuestion(allFlags);
+                correctAnswer();
             }
             else
             {
-                MessageBox.Show("haha, no!");
-                lives = lives - 1; ////////
+                wrongAnwser(); 
                 if (lives != 0)
                 {
                     makeQuestion(allFlags);
                 }
                 else
                 {
-                    aTimer.Enabled = false;
                     gameOver();
                 }
             }
@@ -105,20 +101,17 @@ namespace flag_game
         {
             if (ans3.Content.ToString() == allFlags[0].Name.ToString())
             {
-                MessageBox.Show("yes!");
-                makeQuestion(allFlags);
+                correctAnswer();
             }
             else
             {
-                MessageBox.Show("haha, no!");
-                lives = lives - 1; ////////
+                wrongAnwser(); 
                 if (lives != 0)
                 {
                     makeQuestion(allFlags);
                 }
                 else
                 {
-                    aTimer.Enabled = false;
                     gameOver();
                 }
             }
@@ -127,20 +120,17 @@ namespace flag_game
         {
             if (ans4.Content.ToString() == allFlags[0].Name.ToString())
             {
-                MessageBox.Show("yes!");
-                makeQuestion(allFlags);
+                correctAnswer();
             }
             else
             {
-                MessageBox.Show("haha, no!");
-                lives = lives - 1; ////////
+                wrongAnwser(); 
                 if (lives != 0)
                 {
                     makeQuestion(allFlags);
                 }
                 else
                 {
-                    aTimer.Enabled = false;
                     gameOver();
                 }
             }
@@ -148,6 +138,7 @@ namespace flag_game
 
         private void makeQuestion(Flag[] allflags)
         {
+            livesLabel.Content = "lives: " + lives;
             rand.Randomizer.Randomize(allflags);
             Mast.Source = new BitmapImage(new Uri(allflags[0].Path, UriKind.Relative));//
 
@@ -164,32 +155,41 @@ namespace flag_game
 
         }
 
+        private void correctAnswer()
+        {
+            MessageBox.Show("yes!");
+            makeQuestion(allFlags);
+        }
+
+        private void wrongAnwser()
+        {
+            MessageBox.Show("haha, no!");
+            lives = lives - 1;
+        }
+
+        private void timeUp()
+        {
+            aTimer.Enabled = false;
+            MessageBox.Show("You Win :-D");
+            Task.Factory.StartNew(() =>     //dispatcher used to manage threads
+            {
+                InvokeMethodExample();
+            });
+        }
+
         private void makeTimer()
         {
-            setTimer();
-
-            
-        }
-        public void setTimer()
-        {
-            
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             aTimer.Interval = 30000;
             aTimer.Enabled = true;
-            
+            timerLabel.Content = aTimer.ToString();
+
         }
+       
 
         private  void OnTimedEvent(object source, ElapsedEventArgs e)
         {
-            //MessageBox.Show("time up! :-(");
-            //MainWindow mw = new MainWindow();
-            //mw.Show();
-            // Application.Current.Windows[0].Close();
-            //this.flag flag_game.EasyGame
-            
-            aTimer.Enabled = false;
-            gameOver();
-
+            timeUp();
         }
        
     }
