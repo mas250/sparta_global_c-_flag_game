@@ -64,7 +64,7 @@ namespace flag_game
             
             if (ans1.Content.ToString() == allFlags[0].Name.ToString())
             {
-                ans1.Background = Brushes.Green;
+                ans1.Background = Brushes.LightGreen;
                 correctAnswer();
             }
             else
@@ -88,10 +88,12 @@ namespace flag_game
         {
             if (ans2.Content.ToString() == allFlags[0].Name.ToString())
             {
+                ans2.Background = Brushes.LightGreen;
                 correctAnswer();
             }
             else
             {
+                ans2.Background = Brushes.Red;
                 wrongAnwser();
                 if (lives != 0)
                 {
@@ -107,10 +109,12 @@ namespace flag_game
         {
             if (ans3.Content.ToString() == allFlags[0].Name.ToString())
             {
+                ans3.Background = Brushes.LightGreen;
                 correctAnswer();
             }
             else
             {
+                ans3.Background = Brushes.Red;
                 wrongAnwser();
                 if (lives != 0)
                 {
@@ -126,10 +130,12 @@ namespace flag_game
         {
             if (ans4.Content.ToString() == allFlags[0].Name.ToString())
             {
+                ans4.Background = Brushes.LightGreen;
                 correctAnswer();
             }
             else
             {
+                ans4.Background = Brushes.Red;
                 wrongAnwser();
                 if (lives != 0)
                 {
@@ -144,14 +150,13 @@ namespace flag_game
 
         private void correctAnswer()
         {
-            rightSound.Play();
             MessageBox.Show("yes!");
             makeQuestion(allFlags);
         }
         private void wrongAnwser()
         {
             MessageBox.Show("haha, no!");
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             lives = lives - 1;
         }
         private void gameOver()
