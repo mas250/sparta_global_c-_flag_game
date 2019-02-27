@@ -25,31 +25,20 @@ namespace flag_game
     {
         Flag[] allFlags;
         System.Timers.Timer aTimer = new System.Timers.Timer();
-        int lives = 2;
+        int lives = 3;
 
         public EasyGame(Flag[] allflags)
         {
             InitializeComponent();
-
             this.allFlags = allFlags;   //flag list AllFlags created at page load
 
-
             makeQuestion(allflags);
-
             makeTimer();
-            System.Timers.Timer aTimer = new System.Timers.Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 30000;
-            aTimer.Enabled = true;
-            
-
-
         }
         private void gameOver()
         {
             MessageBox.Show("you lose :-(");
-            
-            Task.Factory.StartNew(() =>
+            Task.Factory.StartNew(() =>     //dispatcher used to manage threads
             {
                 InvokeMethodExample();
             });
@@ -62,13 +51,12 @@ namespace flag_game
             {
                 MainWindow mw = new MainWindow();
                 mw.Show();
-                this.Close();
+                this.Close();           //Timer runs on its own threads
             });
         }
         private void Ans1_Click(object sender, RoutedEventArgs e)
         {
-            if (lives != 0)
-            {
+            
                 if (ans1.Content.ToString() == allFlags[0].Name.ToString())
                 {
                     MessageBox.Show("yes!");
@@ -77,91 +65,84 @@ namespace flag_game
                 else
                 {
                     MessageBox.Show("haha, no!");
-                    lives = lives - 1;
-                    makeQuestion(allFlags);
+                    lives = lives - 1; ////////
+                     if (lives != 0)
+                     {
+                         makeQuestion(allFlags);
+                     }
+                     else
+                     {
+                    aTimer.Enabled = false;
+                    gameOver();
+                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("you lose :-(");
-                MainWindow mw = new MainWindow();
-                mw.Show();
-                this.Close();
-            }
+           
 
         }
         private void Ans2_Click(object sender, RoutedEventArgs e)
         {
-            if (lives != 0)
+            if (ans2.Content.ToString() == allFlags[0].Name.ToString())
             {
-                if (ans2.Content.ToString() == allFlags[0].Name.ToString())
+                MessageBox.Show("yes!");
+                makeQuestion(allFlags);
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+                lives = lives - 1; ////////
+                if (lives != 0)
                 {
-                    MessageBox.Show("yes!");
                     makeQuestion(allFlags);
                 }
                 else
                 {
-                    MessageBox.Show("haha, no!");
-                    lives -= 1;
-                    makeQuestion(allFlags);
+                    aTimer.Enabled = false;
+                    gameOver();
                 }
-            }
-            else
-            {
-                MessageBox.Show("you lose :-(");
-                MainWindow mw = new MainWindow();
-                mw.Show();
-                this.Close();
             }
         }
         private void Ans3_Click(object sender, RoutedEventArgs e)
         {
-            if (lives != 0)
+            if (ans3.Content.ToString() == allFlags[0].Name.ToString())
             {
-                if (ans3.Content.ToString() == allFlags[0].Name.ToString())
+                MessageBox.Show("yes!");
+                makeQuestion(allFlags);
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+                lives = lives - 1; ////////
+                if (lives != 0)
                 {
-                    MessageBox.Show("yes!");
                     makeQuestion(allFlags);
                 }
                 else
                 {
-                    MessageBox.Show("haha, no!");
-                    lives -= 1;
-                    makeQuestion(allFlags);
+                    aTimer.Enabled = false;
+                    gameOver();
                 }
-            }
-            else
-            {
-                MessageBox.Show("you lose :-(");
-                MainWindow mw = new MainWindow();
-                mw.Show();
-                this.Close();
             }
         }
         private void Ans4_Click(object sender, RoutedEventArgs e)
         {
-            if (lives != 0)
+            if (ans4.Content.ToString() == allFlags[0].Name.ToString())
             {
-                if (ans4.Content.ToString() == allFlags[0].Name.ToString())
+                MessageBox.Show("yes!");
+                makeQuestion(allFlags);
+            }
+            else
+            {
+                MessageBox.Show("haha, no!");
+                lives = lives - 1; ////////
+                if (lives != 0)
                 {
-                    MessageBox.Show("yes!");
                     makeQuestion(allFlags);
                 }
                 else
                 {
-                    MessageBox.Show("haha, no!");
-                    lives -= 1;
-                    makeQuestion(allFlags);
+                    aTimer.Enabled = false;
+                    gameOver();
                 }
-            }
-            else
-            {
-                //MessageBox.Show("you lose :-(");
-                //MainWindow mw = new MainWindow();
-                //mw.Show();
-                //this.Close();
-                
-                gameOver();
             }
         }
 
@@ -205,7 +186,8 @@ namespace flag_game
             //mw.Show();
             // Application.Current.Windows[0].Close();
             //this.flag flag_game.EasyGame
-            aTimer.Stop();
+            
+            aTimer.Enabled = false;
             gameOver();
 
         }
