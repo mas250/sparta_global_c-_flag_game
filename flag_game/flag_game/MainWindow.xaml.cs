@@ -37,7 +37,7 @@ namespace flag_game
         private void HardButton_Click(object sender, RoutedEventArgs e)
         {
             Flag[] allFlags = createFlags();
-            hardGame hg = new hardGame();
+            hardGame hg = new hardGame(allFlags);
             hg.Show();
             this.Close();
         }
