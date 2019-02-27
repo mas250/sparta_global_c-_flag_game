@@ -34,6 +34,14 @@ namespace flag_game
             this.Close();
         }
 
+        private void HardButton_Click(object sender, RoutedEventArgs e)
+        {
+            Flag[] allFlags = createFlags();
+            hardGame hg = new hardGame();
+            hg.Show();
+            this.Close();
+        }
+
         private Flag[] createFlags() {
             Flag uk = new Flag();
             uk.Name = "UK";
@@ -80,5 +88,6 @@ namespace flag_game
             return allFlags;
         }
 
+        
     }
 }

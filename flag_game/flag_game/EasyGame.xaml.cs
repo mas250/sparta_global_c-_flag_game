@@ -27,6 +27,7 @@ namespace flag_game
         System.Timers.Timer aTimer = new System.Timers.Timer();
         int lives = 3;
         System.Media.SoundPlayer rightSound = new System.Media.SoundPlayer(@"../../Sounds/start.wav");
+
         public EasyGame(Flag[] allflags)
         {
             InitializeComponent();
