@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="extremeGame" Height="450" Width="800">
     <Grid>
-        <Image Name="map" HorizontalAlignment="Left" Height="274" Margin="57,52,0,0" VerticalAlignment="Top" Width="270" />
+        <Image Name="map" HorizontalAlignment="Left" Height="274" Margin="57,52,0,0" VerticalAlignment="Top" Width="270"  />
         <Button Content="Back" HorizontalAlignment="Left" Margin="57,348,0,0" VerticalAlignment="Top" Width="75" FontSize="18" Background="#FFDDDDDD" Click="Button_Click"/>
     </Grid>
 </Window>

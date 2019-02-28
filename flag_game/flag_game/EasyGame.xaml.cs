@@ -26,7 +26,7 @@ namespace flag_game
         Flag[] allFlags;
         System.Timers.Timer aTimer = new System.Timers.Timer();
         int lives = 3;
-
+        int points = 0;
 
         public EasyGame(Flag[] allflags)
         {
@@ -149,7 +149,7 @@ namespace flag_game
 
         private void correctAnswer()
         {
-            
+            points += 1;
             MessageBox.Show("Correct!");
             makeQuestion(allFlags);
         }
@@ -162,15 +162,16 @@ namespace flag_game
         private void gameOver()
         {
             aTimer.Enabled = false;
-            MessageBox.Show("you lose :-(");
+            MessageBox.Show("you lose!");
+            MessageBox.Show("You scored " + points + " points");
             Task.Factory.StartNew(() =>     //dispatcher used to manage threads
             {
-                InvokeMethodExample();
+                InvokeMethod();
             });
             
         }
 
-        private void InvokeMethodExample()
+        private void InvokeMethod()
         {
             Thread.Sleep(500);
             Dispatcher.Invoke(() =>
@@ -195,10 +196,19 @@ namespace flag_game
         private void timeUp()
         {
             aTimer.Enabled = false;
-            MessageBox.Show("You Win :-D");
+            if (points > 0)
+            {
+                MessageBox.Show("You Win!");
+                MessageBox.Show("You scored " + points + " points" );
+            }
+            else
+            {
+                MessageBox.Show("You Lose!");
+            }
+            
             Task.Factory.StartNew(() =>     //dispatcher used to manage threads
             {
-                InvokeMethodExample();
+                InvokeMethod();
             });
         }
 

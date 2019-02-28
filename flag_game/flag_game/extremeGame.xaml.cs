@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 
+
 namespace flag_game
 {
     /// <summary>
@@ -28,7 +29,7 @@ namespace flag_game
 
             map.Source = new BitmapImage(new Uri("../../Images/eu.jpg", UriKind.Relative));
 
-            
+           // seek();
           
 
         }
@@ -38,6 +39,11 @@ namespace flag_game
             MainWindow mw = new MainWindow();
             mw.Show();
             this.Close();
+        }
+        private void seek(object sender, EventArgs e)
+        {
+            //Point coordinates = Cursor.Position;
+            MessageBox.Show("Coordinates are: ");// + coordinates);
         }
     }
 }
