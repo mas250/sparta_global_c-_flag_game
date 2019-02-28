@@ -9,13 +9,17 @@
     <Grid Background="Black">
         <Button x:Name="ans1" Content="Button1" HorizontalAlignment="Left" Margin="180,225,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="3.619,5.756" Height="27" Click="Ans1_Click" Foreground="Wheat" FontSize="1" />
         <Button x:Name="ans2" Content="Button2" HorizontalAlignment="Left" Margin="588,365,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="3.619,5.756" Height="28" Click="Ans2_Click" Foreground="Wheat" FontSize="1"/>
-        <Button x:Name="ans3" Content="Button3" HorizontalAlignment="Left" Margin="588,225,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="3.619,5.756" Height="27" Click="Ans3_Click" Foreground="Wheat" FontSize="1"/>
+        <Button x:Name="ans3" Content="Button3" HorizontalAlignment="Left" Margin="588,225,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="3.619,5.756" Height="27" Click="Ans3_Click" Foreground="Wheat" FontSize="1">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
         <Button x:Name="ans4" Content="Button4" HorizontalAlignment="Left" Margin="180,365,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="3.619,5.756" Height="28" Click="Ans4_Click" Foreground="Wheat" FontSize="1"/>
         <Image Name="mast1" HorizontalAlignment="Left" Height="89" Margin="68,120,0,0" VerticalAlignment="Top" Width="261"/>
-        <Label x:Name="livesLabel" Content="Label" HorizontalAlignment="Left" Margin="53,28,0,0" VerticalAlignment="Top" Height="27" Width="56"/>
-        <Image x:Name="mast2" HorizontalAlignment="Left" Height="89" Margin="471,120,0,0" VerticalAlignment="Top" Width="262"/>
-        <Image x:Name="mast3" HorizontalAlignment="Left" Height="89" Margin="68,264,0,0" VerticalAlignment="Top" Width="261"/>
-        <Image x:Name="mast4" HorizontalAlignment="Left" Height="89" Margin="471,262,0,0" VerticalAlignment="Top" Width="262"/>
+        <Label x:Name="livesLabel" Content="Label" HorizontalAlignment="Left" Margin="53,28,0,0" VerticalAlignment="Top" Height="34" Width="74" Background="Wheat" FontSize="18"/>
+        <Image x:Name="mast2" HorizontalAlignment="Left" Height="89" Margin="471,120,0,0" VerticalAlignment="Top" Width="262" Cursor="Hand"/>
+        <Image x:Name="mast3" HorizontalAlignment="Left" Height="89" Margin="68,264,0,0" VerticalAlignment="Top" Width="261" Cursor=""/>
+        <Image x:Name="mast4" HorizontalAlignment="Left" Height="89" Margin="471,262,0,0" VerticalAlignment="Top" Width="262" Cursor="Hand"/>
         <TextBlock Name="mainFlag" HorizontalAlignment="Left" Margin="330,54,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="61" Width="163" FontSize="28"/>
     </Grid>
 

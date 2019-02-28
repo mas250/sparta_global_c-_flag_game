@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:flag_game"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Name="easyButton" Content="Easy Mode" HorizontalAlignment="Left" Margin="134,97,0,0" VerticalAlignment="Top" Width="75" Click="launch_easy"/>
-        <TextBlock Name="intro"  HorizontalAlignment="Left" Margin="52,167,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="52" Width="319"/>
-        <Button Name ="hardButton" Content="hardButton" HorizontalAlignment="Left" Margin="265,97,0,0" VerticalAlignment="Top" Width="75" Click="HardButton_Click"/>
+    <Grid Background="Black">
+        <Button Name="easyButton" Content="Easy" HorizontalAlignment="Left" Margin="56,56,0,0" VerticalAlignment="Top" Height="52" Width="268" Click="launch_easy" Background="Wheat" FontSize="24" />
+        <TextBlock Name="intro"  HorizontalAlignment="Left" Margin="476,139,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="154" Width="243" Background="Wheat" FontSize="18" />
+        <Button Name ="hardButton" Content="Hard" HorizontalAlignment="Left" Margin="56,165,0,0" VerticalAlignment="Top" Height="52" Width="268" Click="HardButton_Click" Background="Wheat" FontSize="24" />
+        <Button Name="extremeButton" Content="Extreme" HorizontalAlignment="Left" Margin="56,269,0,0" VerticalAlignment="Top" Height="52" Width="268" Click="ExtremeButton_Click" Background="Wheat" FontSize="24"/>
 
     </Grid>
 </Window>

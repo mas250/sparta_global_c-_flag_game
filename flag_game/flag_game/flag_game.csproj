@@ -55,12 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="extremeGame.xaml.cs">
+      <DependentUpon>extremeGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="hardGame.xaml.cs">
       <DependentUpon>hardGame.xaml</DependentUpon>
     </Compile>
     <Compile Include="makeFlags.cs" />
     <Compile Include="rand.cs" />
     <Page Include="EasyGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="extremeGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,6 +139,7 @@
     <Resource Include="Images\antigua.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\eu.jpg" />
     <Resource Include="Images\comoros.jpg" />
     <Resource Include="Images\congo.jpg" />
     <Resource Include="Images\costa_rica.jpg" />

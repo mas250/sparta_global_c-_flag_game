@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="EasyGame" Height="450" Width="800">
     <Grid Background="Black">
-        <Button Name="ans1" Content="Button1" HorizontalAlignment="Left" Margin="160,222,0,0" VerticalAlignment="Top" Width="198" RenderTransformOrigin="3.619,5.756" Height="39" Click="Ans1_Click" FontSize="18" />
-        <Button Name="ans2" Content="Button2" HorizontalAlignment="Left" Margin="454,338,0,0" VerticalAlignment="Top" Width="197" RenderTransformOrigin="3.619,5.756" Height="39" Click="Ans2_Click" FontSize="18" />
-        <Button Name="ans3" Content="Button3" HorizontalAlignment="Left" Margin="454,223,0,0" VerticalAlignment="Top" Width="197" RenderTransformOrigin="3.619,5.756" Height="40" Click="Ans3_Click" FontSize="18"/>
-        <Button Name="ans4" Content="Button4" HorizontalAlignment="Left" Margin="160,338,0,0" VerticalAlignment="Top" Width="198" RenderTransformOrigin="3.619,5.756" Height="39" Click="Ans4_Click" FontSize="18"/>
+        <Button Name="ans1" Content="Button1" HorizontalAlignment="Left" Margin="160,222,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="3.619,5.756" Height="40" Click="Ans1_Click" FontSize="18" Background="#FFDDDDDD" />
+        <Button Name="ans2" Content="Button2" HorizontalAlignment="Left" Margin="454,338,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="3.619,5.756" Height="40" Click="Ans2_Click" FontSize="18" Background="#FFDDDDDD" />
+        <Button Name="ans3" Content="Button3" HorizontalAlignment="Left" Margin="454,223,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="3.619,5.756" Height="40" Click="Ans3_Click" FontSize="18" Background="#FFDDDDDD"/>
+        <Button Name="ans4" Content="Button4" HorizontalAlignment="Left" Margin="160,338,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="3.619,5.756" Height="40" Click="Ans4_Click" FontSize="18"/>
         <Image Name="Mast" HorizontalAlignment="Left" Height="141" Margin="200,43,0,0" VerticalAlignment="Top" Width="372" />
-        <Label Name="livesLabel" Content="Label" HorizontalAlignment="Left" Margin="55,43,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="livesLabel" Content="Label" HorizontalAlignment="Left" Margin="53,28,0,0" VerticalAlignment="Top" Height="34" Width="74" Background="Wheat" FontSize="18"/>
 
     </Grid>
 </Window>

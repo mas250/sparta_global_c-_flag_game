@@ -1,0 +1,13 @@
+﻿<Window x:Class="flag_game.extremeGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:flag_game"
+        mc:Ignorable="d"
+        Title="extremeGame" Height="450" Width="800">
+    <Grid>
+        <Image Name="map" HorizontalAlignment="Left" Height="274" Margin="57,52,0,0" VerticalAlignment="Top" Width="270" />
+        <Button Content="Back" HorizontalAlignment="Left" Margin="57,348,0,0" VerticalAlignment="Top" Width="75" FontSize="18" Background="#FFDDDDDD" Click="Button_Click"/>
+    </Grid>
+</Window>

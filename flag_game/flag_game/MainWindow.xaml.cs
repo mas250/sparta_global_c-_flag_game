@@ -45,8 +45,13 @@ namespace flag_game
             this.Close();
         }
 
-       
-
-        
+        private void ExtremeButton_Click(object sender, RoutedEventArgs e)
+        {
+            makeFlags mf = new makeFlags();
+            Flag[] allFlags = mf.createFlags();
+            extremeGame eg = new extremeGame();
+            eg.Show();
+            this.Close();
+        }
     }
 }

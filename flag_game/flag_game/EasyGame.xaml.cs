@@ -26,8 +26,7 @@ namespace flag_game
         Flag[] allFlags;
         System.Timers.Timer aTimer = new System.Timers.Timer();
         int lives = 3;
-       
-         
+
 
         public EasyGame(Flag[] allflags)
         {
@@ -38,6 +37,7 @@ namespace flag_game
             makeTimer();
             
         }
+
         private void makeQuestion(Flag[] allflags)
         {
             livesLabel.Content = "lives: " + lives;
@@ -65,6 +65,7 @@ namespace flag_game
             if (ans1.Content.ToString() == allFlags[0].Name.ToString())
             {
                 ans1.Background = Brushes.LightGreen;
+                
                 correctAnswer();
             }
             else
@@ -148,6 +149,7 @@ namespace flag_game
 
         private void correctAnswer()
         {
+            
             MessageBox.Show("Correct!");
             makeQuestion(allFlags);
         }
@@ -179,9 +181,6 @@ namespace flag_game
                 this.Close();           //Timer runs on its own threads
             });
         }
-
-
-
 
         private void makeTimer()
         {

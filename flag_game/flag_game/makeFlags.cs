@@ -148,14 +148,14 @@ namespace flag_game
 
             Flag central_africa = new Flag();
             central_africa.Name = "Central African Republic";
-            central_africa.Path = "../../Images/central_africa.jpg";
+            central_africa.Path = "../../Images/central_african_republic.jpg";
 
             Flag chad = new Flag();
             chad.Name = "Chad";
             chad.Path = "../../Images/chad.jpg";
 
             Flag chile = new Flag();
-            chile.Name = "chile";
+            chile.Name = "Chile";
             chile.Path = "../../Images/chile.jpg";
 
             Flag colombia = new Flag();
@@ -163,7 +163,7 @@ namespace flag_game
             colombia.Path = "../../Images/colombia.jpg";
 
             Flag comoros = new Flag();
-            comoros.Name = "comoros";
+            comoros.Name = "Comoros";
             comoros.Path = "../../Images/comoros.jpg";
 
             Flag congo = new Flag();
