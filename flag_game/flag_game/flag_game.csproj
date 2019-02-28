@@ -131,6 +131,31 @@
     <Resource Include="Images\antigua.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\comoros.jpg" />
+    <Resource Include="Images\congo.jpg" />
+    <Resource Include="Images\costa_rica.jpg" />
+    <Resource Include="Images\croatia.jpg" />
+    <Resource Include="Images\cuba.jpg" />
+    <Resource Include="Images\colombia.jpg" />
+    <Resource Include="Images\central_african_republic.jpg" />
+    <Resource Include="Images\chad.jpg" />
+    <Resource Include="Images\chile.jpg" />
+    <Resource Include="Images\burma.jpg" />
+    <Resource Include="Images\cambodia.jpg" />
+    <Resource Include="Images\cameroon.jpg" />
+    <Resource Include="Images\canada.jpg" />
+    <Resource Include="Images\cape_verde.jpg" />
+    <Content Include="Sounds\wrong.wav" />
+    <Resource Include="Images\brazil.jpg" />
+    <Resource Include="Images\brundi.jpg" />
+    <Resource Include="Images\brunei.jpg" />
+    <Resource Include="Images\bulgaria.jpg" />
+    <Resource Include="Images\burkina_faso.jpg" />
+    <Resource Include="Images\benin.jpg" />
+    <Resource Include="Images\bhutan.jpg" />
+    <Resource Include="Images\bolivia.jpg" />
+    <Resource Include="Images\bosnia.jpg" />
+    <Resource Include="Images\botswana.jpg" />
     <Resource Include="Images\belgium.jpg" />
     <Resource Include="Images\belize.jpg" />
     <Resource Include="Images\belarus.jpg" />

@@ -39,6 +39,7 @@ namespace flag_game
         {
             livesLabel.Content = "lives: " + lives;
             rand.Randomizer.Randomize(allflags);
+            mainFlag.Foreground = Brushes.Wheat;
             mainFlag.Text = allflags[0].Name;
 
 
@@ -163,12 +164,12 @@ namespace flag_game
 
         private void correctAnswer()
         {
-            MessageBox.Show("yes!");
+            MessageBox.Show("Correct!");
             makeQuestion(allFlags);
         }
         private void wrongAnwser()
         {
-            MessageBox.Show("haha, no!");
+            MessageBox.Show("Wrong!");
             Thread.Sleep(250);
             lives = lives - 1;
         }
