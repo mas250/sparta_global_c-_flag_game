@@ -58,6 +58,7 @@
     <Compile Include="hardGame.xaml.cs">
       <DependentUpon>hardGame.xaml</DependentUpon>
     </Compile>
+    <Compile Include="makeFlags.cs" />
     <Compile Include="rand.cs" />
     <Page Include="EasyGame.xaml">
       <SubType>Designer</SubType>
