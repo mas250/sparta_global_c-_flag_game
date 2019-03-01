@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Timers;
 using System.Threading;
+using System.IO;
 
 namespace flag_game
 {
@@ -179,12 +180,21 @@ namespace flag_game
         {
             aTimer.Enabled = false;
             MessageBox.Show("you lose :-(");
-            MessageBox.Show("You scored " + points + " points");
+            WritetoFile("Hard_Game,Points_" + points + "_Lives_" + lives);
             Task.Factory.StartNew(() =>     //dispatcher used to manage threads
             {
                 InvokeMethod();
             });
 
+        }
+        public void WritetoFile(string item)
+        {
+            string path = "scores.txt";
+
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine(item);
+            }
         }
 
         private void InvokeMethod()
@@ -216,6 +226,8 @@ namespace flag_game
             {
                 MessageBox.Show("You Win!");
                 MessageBox.Show("You scored " + points + " points");
+
+                WritetoFile("Hard_Game,Points_" + points + "_Lives_" + lives);
             }
             else
             {

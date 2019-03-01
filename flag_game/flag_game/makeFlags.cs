@@ -79,8 +79,8 @@ namespace flag_game
             belarus.Path = "../../Images/belarus.jpg";
 
             Flag belgium = new Flag("Belgum", "../../Images/belgium.jpg");
-           // belgium.Name = "Belgium";
-           // belgium.Path = "../../Images/belgium.jpg";
+            belgium.Name = "Belgium";
+            belgium.Path = "../../Images/belgium.jpg";
 
             Flag belize = new Flag();
             belize.Name = "Belize";
@@ -186,12 +186,12 @@ namespace flag_game
 
             //add more flags#
 
-            Flag[] allFlags = new Flag[] { uk, france, japan, china, belgium };
-            //Flag[] allFlags = new Flag[] { uk, france, japan, china, afghanistan, antigua, argentina,
-            //    armenia, angola, australia, austria, azerbaijan, bahamas, bahrain, bangladesh, barbados,
-            //    belarus, belgium , belize, benin, bhutan, bolivia, bosnia, botswana, brazil, brundi,
-            //    brunei, bulgaria, burkina_faso, burma, cambodia, cameroon, canada, cape_verde, central_africa, chad,
-            //    chile, colombia, comoros, congo, costa_rica, croatia, cuba  };
+
+            Flag[] allFlags = new Flag[] { uk, france, japan, china, afghanistan, antigua, argentina,
+                armenia, angola, australia, austria, azerbaijan, bahamas, bahrain, bangladesh, barbados,
+                belarus, belgium, belize, benin, bhutan, bolivia, bosnia, botswana, brazil, brundi,
+                brunei, bulgaria, burkina_faso, burma, cambodia, cameroon, canada, cape_verde, central_africa, chad,
+                chile, colombia, comoros, congo, costa_rica, croatia, cuba  };
             rand.Randomizer.Randomize(allFlags);
 
             //place shuffled list in a list of length 4
